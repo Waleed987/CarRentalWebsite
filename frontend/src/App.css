@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer utilities {
+    @keyframes cardsAnim {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  
+    .animate-cards {
+      animation: cardsAnim 1s ease-in-out forwards;
+    }
+  }
+  
