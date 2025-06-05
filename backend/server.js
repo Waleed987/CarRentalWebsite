@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const connectDB = require("./utils/db");
-const router = require('./routes/auth-route');
+const userRouter = require('./routes/auth-route');
+const carRouter = require('./routes/car-route');
 const cors = require('cors');
 
 app.use(express.json());
@@ -13,7 +14,8 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
   
-app.use('/api',router);
+app.use('/api/user',userRouter);
+app.use('/api/cars',carRouter);
 
 connectDB().then(()=>{
     app.listen(5000,()=>{
