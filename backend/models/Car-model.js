@@ -2,6 +2,14 @@
 const mongoose = require('mongoose');
 
 const carSchema = new mongoose.Schema({
+  imageUrl:{
+    type:String,
+    required:true
+  },
+  name:{
+    type:String,
+    required:true
+  },
   pricePerDay: {
     type: Number,
     required: true,

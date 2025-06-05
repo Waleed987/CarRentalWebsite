@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost:27017/cars', {
 
   const dummyCars = [
     {
+      imageUrl:"/src/assets/car1.jpeg",  
+      name: "Ford_Transit",
       pricePerDay: 97,
       currency: 'Euro',
       mileage: 'Unlimited',
@@ -27,6 +29,8 @@ mongoose.connect('mongodb://localhost:27017/cars', {
       features: ['A/C', 'ABS', 'Air Bags', 'Central Locking', 'Electric Windows']
     },
     {
+      imageUrl:"/frontend/src/assets/car1.jpeg",
+      name: "Toyota_Corolla",
       pricePerDay: 65,
       currency: 'Euro',
       mileage: 'Unlimited',
@@ -44,6 +48,8 @@ mongoose.connect('mongodb://localhost:27017/cars', {
       features: ['A/C', 'Air Bags', 'Central Locking']
     },
     {
+      imageUrl:"/frontend/src/assets/car1.jpeg",
+      name: "Honda_CR-V",
       pricePerDay: 80,
       currency: 'Euro',
       mileage: 'Unlimited',
@@ -61,6 +67,7 @@ mongoose.connect('mongodb://localhost:27017/cars', {
       features: ['A/C', 'ABS', 'Air Bags', 'Electric Windows']
     }
   ];
+  
 
   await Car.insertMany(dummyCars);
   console.log('Dummy cars inserted');

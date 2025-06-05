@@ -2,7 +2,7 @@ const Car = require('../models/Car-model');
 
 const getCarInfoById = async(req,res)=>{
     try {
-        const id = req.param.id;
+        const id = req.params.id;
         const car = await Car.findOne({id});
         if(!car){
             return res.status(500).json({msg:"Car not found"});

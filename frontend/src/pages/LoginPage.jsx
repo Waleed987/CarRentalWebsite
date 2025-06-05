@@ -20,7 +20,7 @@ function LoginPage(){
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/login', form, {
+            const response = await axios.post('http://localhost:5000/api/user/login', form, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
