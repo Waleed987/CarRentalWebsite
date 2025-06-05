@@ -52,7 +52,7 @@ export default function CarSlider() {
     <>
     <h1 className="pb-[30px] text-[3rem] text-center font-bold font-sans mb-[40px] bg-gray-200">Choose a Car from our Vast Colleciton</h1>
     <div className="w-[95%] pl-[5%]">
-    <div ref={sliderRef} className="keen-slider">
+    <div ref={sliderRef} className="keen-slider m-[5px]">
       {cars.length > 0 ? (
         cars.map((car) => (
           <div key={car._id || car.id} className="keen-slider__slide bg-white p-4 rounded-[10px] shadow-md border-2">

@@ -62,7 +62,6 @@ const carSchema = new mongoose.Schema({
   },
   features: {
     type: [String],
-    enum: ['A/C', 'ABS', 'Air Bags', 'Central Locking', 'Electric Windows'],
   },
 });
 

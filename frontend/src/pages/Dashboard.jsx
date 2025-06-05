@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import DashHero from "../components/DashHero";
 import CardSlider from "../components/CarSlider";
 import DashBottom from "../components/DashBottom";
+import LandFooter from "../components/LandFooter";
 function Dashboard(){
     return(
         <>
@@ -172,6 +173,10 @@ function Dashboard(){
 
                     contact us for assistance in picking the right vehicle.
                 </p>
+            </div>
+
+            <div className="footer bg-gradient-to-t from-black to-black">
+                <LandFooter />
             </div>
         </>
     );
