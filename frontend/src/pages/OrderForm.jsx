@@ -103,7 +103,7 @@ function OrderForm(){
                 
                 <div className='bg-white text-[1.4rem] pl-[10px] pr-[10px] h-auto w-[30%] rounded-[10px] flex flex-col'>
                     <div className='mb-[10px] h-[7%] w-full flex justify-center items-center rounded-[10px]'>
-                        <h className='text-[1.5rem] font-serif'>PLEASE PROVIDE THE DETAILS</h>
+                        <h className='text-[1.5rem] font-serif mt-[13px]'>PLEASE PROVIDE THE DETAILS</h>
                     </div>
                     <form onSubmit={handleSubmit}>
 

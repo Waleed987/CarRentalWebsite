@@ -24,7 +24,19 @@ function Dashboard(){
                     </div>
                 </div>
 
-                <div className="bg-black w-[95%] h-[200px] mt-[20px] ml-[35px] rounded-[20px] pl-[15px]">
+                <div className="bg-black h-[480px] flex flex-wrap justify-center items-center">
+                    <div className="text-black text-[3rem] h-[90%] w-[90%] bg-white rounded-[30px] flex flex-wrap font-serif items-center">
+                        <h1 className="pl-[80px]">Book Your Dream Car Now!</h1>
+                        <p className="pl-[80px] pr-[80px] font-normal text-gray-800 text-[2rem]">Rent a Car Now from Our World-Wide Trusted Dealers!
+We offer a wide range of vehicles, all in top condition and ready to go.
+Instant booking available—just a single click and you're set to drive.
+No hidden charges, no hassle—pure convenience at your fingertips.
+Serving customers globally with trust, quality, and satisfaction.
+Book now and experience the road like never before!</p>
+                    </div>
+                </div>
+
+                {/* <div className="bg-black w-[95%] h-[200px] mt-[20px] ml-[35px] rounded-[20px] pl-[15px]">
                     <form className="flex flex-row">
                         <div className="w-[20%] h-[200px] flex flex-col">
                             <label className="text-[1.5rem] ml-[5px] mt-[40px] mb-[5px] text-white" >Pick-up Location</label>
@@ -76,11 +88,11 @@ function Dashboard(){
                         <button type="submit" class="cursor-pointer text-white h-[65px] mt-[10px] bg-blue-700 font-bold hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-[1.4rem] px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[180px] ml-[10px]">Submit</button>
                         </div>
                     </form>
-                </div>
+                </div> */}
 
                 
             </div>
-            <div className="h-[700px] w-full bg-gray-100">
+            <div className="mt-[30px] h-[700px] w-full bg-gray-100">
                 <CardSlider/>
             </div>
 
