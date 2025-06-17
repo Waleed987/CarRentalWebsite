@@ -71,7 +71,12 @@ function OrderForm(){
             console.log('Submitting order:', orderData);
 
             // Send data to backend
-            const response = await axios.post("http://localhost:5000/api/orders", orderData);
+          
+            const response = await axios.post('http://localhost:5000/api/order/orderinfo', orderData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
             
             console.log('Order submitted successfully:', response.data);
             alert('Order submitted successfully!');
@@ -101,6 +106,25 @@ function OrderForm(){
                         <h className='text-[1.5rem] font-serif'>PLEASE PROVIDE THE DETAILS</h>
                     </div>
                     <form onSubmit={handleSubmit}>
+
+                    <div className='mb-[15px]'>
+                    <label htmlFor="carSelect" className="text-gray-700 text-lg mb-2 block">Car*</label>
+                        <select
+                        id="carSelect"
+                        name="carSelect"
+                        className="border-2 border-gray-300 p-3 rounded-lg w-full focus:border-blue-500 focus:outline-none transition-colors"
+                        required
+                        value={selectedCarId}
+                        onChange={handleCarChange}
+                        >
+                        <option value="">Select a Car</option>
+                        {cars.map((car, index) => (
+                            <option key={index} value={car.id}>
+                            {car.name}
+                            </option>
+                        ))}
+                        </select>
+                    </div>
                     <div className='mb-[15px] flex flex-col  w-full flex justify-center '>
                         <label htmlFor='firstname'>First Name : </label>
                         <input type="text" name='firstname' id='firstname' value={order.firstname} onChange={handleChange} className='h-[60px] text-[1.4rem] border-2 border-gray-300 rounded-[10px] pl-[10px] focus:border-blue-500 focus:outline-none' placeholder='First Name'></input>
@@ -142,24 +166,7 @@ function OrderForm(){
                         </select>
                     </div>
 
-                    <div>
-                    <label htmlFor="carSelect" className="text-gray-700 text-lg mb-2 block">Car*</label>
-                        <select
-                        id="carSelect"
-                        name="carSelect"
-                        className="border-2 border-gray-300 p-3 rounded-lg w-full focus:border-blue-500 focus:outline-none transition-colors"
-                        required
-                        value={selectedCarId}
-                        onChange={handleCarChange}
-                        >
-                        <option value="">Select a Car</option>
-                        {cars.map((car, index) => (
-                            <option key={index} value={car.id}>
-                            {car.name}
-                            </option>
-                        ))}
-                        </select>
-                    </div>
+                   
                     <div className='mt-[10px] h-[100px] w-full flex justify-center items-center'>
 
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold rounded-full text-[1.4rem] px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
@@ -179,7 +186,7 @@ function OrderForm(){
                         <p className='w-[50%]'>Engine Capacity : {selectedCar.engineCapacity} CC</p>
                         <p className='w-[50%]'>Year : {selectedCar.year}</p>
                     </div>
-                    <div className='bg-gradient-to-l to-black from-red-400 h-[50%] w-full flex justify-center items-center rounded-[10px]'>
+                    <div className='bg-black h-[50%] w-full flex justify-center items-center'>
                         <img src={selectedCar.imageUrl} className="h-[90%] w-[420px] object-cover rounded-[10px]" ></img>
                     </div>
                 </div>

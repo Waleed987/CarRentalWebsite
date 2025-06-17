@@ -3,6 +3,7 @@ const app = express();
 const connectDB = require("./utils/db");
 const userRouter = require('./routes/auth-route');
 const carRouter = require('./routes/car-route');
+const orderRouter = require('./routes/order-route');
 const cors = require('cors');
 
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use(cors({
   
 app.use('/api/user',userRouter);
 app.use('/api/cars',carRouter);
+app.use('/api/order',orderRouter);
 
 connectDB().then(()=>{
     app.listen(5000,()=>{
