@@ -79,7 +79,7 @@ function OrderForm(){
             });
             
             console.log('Order submitted successfully:', response.data);
-            alert('Order submitted successfully!');
+            alert('\tOrder submitted successfully.\n You Will recieve confirmation Email Shortly!');
             
             // Reset form after successful submission
             setOrder({
@@ -99,16 +99,16 @@ function OrderForm(){
     };
     return(
         <>
-            <div className='bg-black h-screen w-screen flex justify-center items-center gap-[50px] flex-row'>
+            <div className='bg-gradient-to-br to-black from-orange-500 h-screen w-screen flex justify-center items-center gap-[50px] flex-row'>
                 
-                <div className='bg-white text-[1.4rem] pl-[10px] pr-[10px] h-[67%] w-[30%] rounded-[10px] flex flex-col'>
+                <div className='bg-white text-[1.4rem] pl-[10px] pr-[10px] h-auto w-[30%] rounded-[10px] flex flex-col'>
                     <div className='mb-[10px] h-[7%] w-full flex justify-center items-center rounded-[10px]'>
                         <h className='text-[1.5rem] font-serif'>PLEASE PROVIDE THE DETAILS</h>
                     </div>
                     <form onSubmit={handleSubmit}>
 
                     <div className='mb-[15px]'>
-                    <label htmlFor="carSelect" className="text-gray-700 text-lg mb-2 block">Car*</label>
+                    <label htmlFor="carSelect" className="text-black ml-[10px] text-[1.4rem]  block">Car*</label>
                         <select
                         id="carSelect"
                         name="carSelect"
@@ -126,25 +126,25 @@ function OrderForm(){
                         </select>
                     </div>
                     <div className='mb-[15px] flex flex-col  w-full flex justify-center '>
-                        <label htmlFor='firstname'>First Name : </label>
+                        <label htmlFor='firstname' className='ml-[10px]'>First Name : </label>
                         <input type="text" name='firstname' id='firstname' value={order.firstname} onChange={handleChange} className='h-[60px] text-[1.4rem] border-2 border-gray-300 rounded-[10px] pl-[10px] focus:border-blue-500 focus:outline-none' placeholder='First Name'></input>
                     </div>
 
                     <div className='mb-[15px] flex flex-col  w-full flex justify-center '>
-                        <label htmlFor='lastname' >Last Name : </label>
+                        <label htmlFor='lastname' className='ml-[10px]' >Last Name : </label>
                         <input type="text" name='lastname' id='lastname' value={order.lastname} onChange={handleChange} className='h-[60px] text-[1.4rem] border-2 border-gray-300 rounded-[10px] pl-[10px] focus:border-blue-500 focus:outline-none' placeholder='Last Name'></input>
                     </div>
 
 
 
                     <div className='mb-[15px] flex flex-col  w-full flex justify-center '>
-                        <label htmlFor='email'>Email : </label>
+                        <label htmlFor='email' className='ml-[10px]'>Email : </label>
                         <input type="email" name='email' id='email' value={order.email} onChange={handleChange} className='h-[60px] text-[1.4rem] border-2 border-gray-300 rounded-[10px] pl-[10px] focus:border-blue-500 focus:outline-none' placeholder='Email'></input>
                     </div>
 
 
                     <div className='flex flex-col  w-full flex justify-center'>
-                    <label htmlFor="area" className="text-gray-700 text-lg mb-2 block">Area*</label>
+                    <label htmlFor="area" className="ml-[10px] text-[1.4rem] mb-2 block">Area*</label>
                         <select 
                             id="area" 
                             name="area" 
@@ -176,6 +176,9 @@ function OrderForm(){
                 </div>
 
                 <div className='bg-white h-[80%] w-[60%] rounded-[10px] flex justify-center items-center flex-col'>
+                    <div className='text-[2rem] flex justify-center items-center font-bold font-serif mt-[20px] border-t-2 border-b-4'>
+                        <h1>{selectedCar.name}</h1>
+                    </div>
                     <div className='font-serif font-bold text-[1.5rem] rounded-[10px] p-[50px] h-[50%] w-full flex flex-wrap'>
                         <p className='w-[48%] mr-[5px]'>Mileage : <b>{selectedCar.mileage}</b></p>
                         <p className='w-[50%]'>Price : {selectedCar.pricePerDay}$ </p>
