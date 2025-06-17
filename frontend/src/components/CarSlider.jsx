@@ -5,6 +5,7 @@ import axios from "axios";
 
 export default function CarSlider() {
   const [cars, setCars] = useState([]);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
 
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
@@ -41,12 +42,31 @@ export default function CarSlider() {
     fetchCars();
   }, []);
 
+  // When all images are loaded, update the slider
   useEffect(() => {
-    const interval = setInterval(() => {
-      instanceRef.current?.next();
-    }, 2000); // Slide every 2 seconds
-    return () => clearInterval(interval);
-  }, [instanceRef]);
+    if (imagesLoaded === cars.length && cars.length > 0 && instanceRef.current) {
+      instanceRef.current.update();
+    }
+  }, [imagesLoaded, cars.length, instanceRef]);
+
+  useEffect(() => {
+    let interval;
+    if (instanceRef.current && cars.length > 0 && imagesLoaded === cars.length) {
+      interval = setInterval(() => {
+        instanceRef.current?.next();
+      }, 2000);
+    }
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [instanceRef, cars, imagesLoaded]);
+
+  // Reset imagesLoaded when cars change
+  useEffect(() => {
+    setImagesLoaded(0);
+  }, [cars]);
 
   return (
     <>
@@ -54,9 +74,15 @@ export default function CarSlider() {
     <div className="w-[95%] pl-[5%]">
     <div ref={sliderRef} className="keen-slider m-[5px]">
       {cars.length > 0 ? (
-        cars.map((car) => (
+        cars.map((car, idx) => (
           <div key={car._id || car.id} className="keen-slider__slide bg-white p-4 rounded-[10px] shadow-md border-2">
-            <img src={car.imageUrl} className="h-[300px] w-[420px] object-cover"></img>
+            <img 
+              src={car.imageUrl} 
+              className="h-[300px] w-[420px] object-cover" 
+              alt={car.name || car.title}
+              onLoad={() => setImagesLoaded((count) => count + 1)}
+              onError={() => setImagesLoaded((count) => count + 1)}
+            />
             <a href="/"><h3 className="text-[2rem] font-bold">{car.name || car.title}</h3></a>
             <p className="text-[1.3rem]">{car.class || car.description}</p>
             <p className="text-[1.5rem] font-bold">{car.pricePerDay} {car.currency} / day</p>

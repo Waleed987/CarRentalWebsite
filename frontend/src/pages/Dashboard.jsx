@@ -17,7 +17,9 @@ function Dashboard(){
                     <div className="flex flex-col absolute h-[550px] w-[800px] bg-transparent top-30 left-5">
                         <p className="ml-[10px] mt-[100px] text-[4.5rem] bg-transparent text-white font-bold font-sans">Car rental marketing</p>
                         <p className="ml-[15px] mt-[20px] text-[1.7rem] font-bold text-white ">We Provide the best Car Rental Facilities in our Area</p>
-                        <button type="button" class="cursor-pointer text-white h-[80px] bg-blue-700 font-bold hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-[1.4rem] px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[180px] ml-[10px] mt-[80px]">Get Started</button>
+                        <button type="button" class="cursor-pointer text-white h-[80px] bg-blue-700 font-bold hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-[1.4rem] px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[180px] ml-[10px] mt-[80px]">
+                            <a href="/orderform">Get Started</a>
+                        </button>
                     </div>
                 </div>
 
@@ -25,20 +27,36 @@ function Dashboard(){
                     <form className="flex flex-row">
                         <div className="w-[20%] h-[200px] flex flex-col">
                             <label className="text-[1.5rem] ml-[5px] mt-[40px] mb-[5px] text-white" >Pick-up Location</label>
-                            <select className="bg-white pt-[5px] pb-[5px] text-center border-2 w-[95%] h-[55px] text-[1.8rem] rounded-[10px]" >
-                                <option>Pick location and city</option>
-                                <option>Pakistan</option>
-                                <option>India</option>
-                            </select>
+                           
+                            <select className="bg-white pt-[5px] pb-[5px] text-center border-2 w-[95%] h-[55px] text-[1.8rem] rounded-[10px]">
+                                <option value="">Select Pickup Location</option>
+                                <option value="karachi-dha">Karachi - DHA Branch</option>
+                                <option value="karachi-northnazimabad">Karachi - North Nazimabad Hub</option>
+                                <option value="lahore-gulberg">Lahore - Gulberg Center</option>
+                                <option value="lahore-johartown">Lahore - Johar Town Point</option>
+                                <option value="islamabad-f7">Islamabad - F-7 Markaz</option>
+                                <option value="islamabad-g13">Islamabad - G-13 Sector Office</option>
+                                <option value="rawalpindi-saddar">Rawalpindi - Saddar Pickup</option>
+                                <option value="peshawar-universityroad">Peshawar - University Road Spot</option>
+                                <option value="quetta-jinnahroad">Quetta - Jinnah Road Branch</option>
+                                </select>
+
                         </div>
                        
                         <div className="w-[20%] h-[200px] flex flex-col">
                             <label className="text-white text-[1.5rem] ml-[5px] mt-[40px] mb-[5px]" >Return Location</label>
-                            <select className="bg-white pt-[5px] pb-[5px] text-center border-2 w-[95%] h-[55px] text-[1.8rem] rounded-[10px]" >
-                                <option>Pick location and city</option>
-                                <option>Pakistan</option>
-                                <option>India</option>
-                            </select>
+                            <select className="bg-white pt-[5px] pb-[5px] text-center border-2 w-[95%] h-[55px] text-[1.8rem] rounded-[10px]">
+                                <option value="">Select Return Location</option>
+                                <option value="karachi-dha">Karachi - DHA Branch</option>
+                                <option value="karachi-northnazimabad">Karachi - North Nazimabad Hub</option>
+                                <option value="lahore-gulberg">Lahore - Gulberg Center</option>
+                                <option value="lahore-johartown">Lahore - Johar Town Point</option>
+                                <option value="islamabad-f7">Islamabad - F-7 Markaz</option>
+                                <option value="islamabad-g13">Islamabad - G-13 Sector Office</option>
+                                <option value="rawalpindi-saddar">Rawalpindi - Saddar Pickup</option>
+                                <option value="peshawar-universityroad">Peshawar - University Road Spot</option>
+                                <option value="quetta-jinnahroad">Quetta - Jinnah Road Branch</option>
+                                </select>
                         </div>
 
                         <div className="w-[20%] h-[200px] flex flex-col">

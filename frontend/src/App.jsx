@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
+import OrderForm from './pages/OrderForm'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/orderform' element={<OrderForm/>} />
       </Routes>
     </BrowserRouter>
     </>
