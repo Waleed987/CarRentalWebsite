@@ -70,7 +70,7 @@ export default function CarSlider() {
 
   return (
     <>
-    <h1 className="pb-[30px] text-[3rem] text-center font-bold font-sans mb-[40px] bg-gray-200">Choose a Car from our Vast Colleciton</h1>
+    <h1 className="pb-[30px] text-[3rem] text-center font-bold font-sans mb-[40px] bg-gray-200">Choose a Car from our Vast Collection</h1>
     <div className="w-[95%] pl-[5%]">
     <div ref={sliderRef} className="keen-slider m-[5px]">
       {cars.length > 0 ? (

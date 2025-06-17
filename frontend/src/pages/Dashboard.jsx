@@ -19,7 +19,7 @@ function Dashboard(){
                         <p className="ml-[10px] mt-[100px] text-[4.5rem] bg-transparent text-white font-bold font-sans">Car rental marketing</p>
                         <p className="ml-[15px] mt-[20px] text-[1.7rem] font-bold text-white ">We Provide the best Car Rental Facilities in our Area</p>
                         <button type="button" class="cursor-pointer text-white h-[80px] bg-blue-700 font-bold hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-[1.4rem] px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[180px] ml-[10px] mt-[80px]">
-                            <a href="/orderform">Get Started</a>
+                            <a href="/orderform">Book Now</a>
                         </button>
                     </div>
                 </div>
@@ -28,11 +28,11 @@ function Dashboard(){
                     <div className="text-black text-[3rem] h-[90%] w-[90%] bg-white rounded-[30px] flex flex-wrap font-serif items-center">
                         <h1 className="pl-[80px]">Book Your Dream Car Now!</h1>
                         <p className="pl-[80px] pr-[80px] font-normal text-gray-800 text-[2rem]">Rent a Car Now from Our World-Wide Trusted Dealers!
-We offer a wide range of vehicles, all in top condition and ready to go.
-Instant booking available—just a single click and you're set to drive.
-No hidden charges, no hassle—pure convenience at your fingertips.
-Serving customers globally with trust, quality, and satisfaction.
-Book now and experience the road like never before!</p>
+                            We offer a wide range of vehicles, all in top condition and ready to go.
+                            Instant booking available—just a single click and you're set to drive.
+                            No hidden charges, no hassle—pure convenience at your fingertips.
+                            Serving customers globally with trust, quality, and satisfaction.
+                            Book now and experience the road like never before!</p>
                     </div>
                 </div>
 
