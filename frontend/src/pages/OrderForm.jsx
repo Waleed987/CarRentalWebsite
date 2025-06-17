@@ -99,7 +99,7 @@ function OrderForm(){
     };
     return(
         <>
-            <div className='bg-gradient-to-br to-black from-orange-500 h-screen w-screen flex justify-center items-center gap-[50px] flex-row'>
+            <div className='bg-gray-900 h-screen w-screen flex justify-center items-center gap-[50px] flex-row'>
                 
                 <div className='bg-white text-[1.4rem] pl-[10px] pr-[10px] h-auto w-[30%] rounded-[10px] flex flex-col'>
                     <div className='mb-[10px] h-[7%] w-full flex justify-center items-center rounded-[10px]'>
@@ -189,7 +189,7 @@ function OrderForm(){
                         <p className='w-[50%]'>Engine Capacity : {selectedCar.engineCapacity} CC</p>
                         <p className='w-[50%]'>Year : {selectedCar.year}</p>
                     </div>
-                    <div className='bg-black h-[50%] w-full flex justify-center items-center'>
+                    <div className='bg-gray-900 h-[50%] w-full flex justify-center items-center'>
                         <img src={selectedCar.imageUrl} className="h-[90%] w-[420px] object-cover rounded-[10px]" ></img>
                     </div>
                 </div>

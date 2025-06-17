@@ -3,12 +3,13 @@ import DashHero from "../components/DashHero";
 import CardSlider from "../components/CarSlider";
 import DashBottom from "../components/DashBottom";
 import LandFooter from "../components/LandFooter";
+import DashNav from "../components/DashNav";
 function Dashboard(){
     return(
         <>
             <div className="dashboard-container flex flex-col w-screen h-screen bg-gray-200">
                 <div className="w-full bg-black">
-                <Navbar />
+                <DashNav />
                 </div>
                 
 
