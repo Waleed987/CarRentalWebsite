@@ -99,7 +99,7 @@ function OrderForm(){
     };
     return(
         <>
-            <div className='bg-gray-900 h-screen w-screen flex justify-center items-center gap-[50px] flex-row'>
+            <div className='bg-gray-900 h-screen w-screen flex justify-center items-center gap-[50px] flex-wrap'>
                 
                 <div className='bg-white text-[1.4rem] pl-[10px] pr-[10px] h-auto w-[30%] rounded-[10px] flex flex-col'>
                     <div className='mb-[10px] h-[7%] w-full flex justify-center items-center rounded-[10px]'>
@@ -175,13 +175,13 @@ function OrderForm(){
                     </form>
                 </div>
 
-                <div className='bg-white h-[80%] w-[60%] rounded-[10px] flex justify-center items-center flex-col'>
+                <div className='bg-black text-yellow-400 h-[80%] w-[60%] rounded-[10px] flex justify-center items-center flex-col'>
                     <div className='text-[2rem] flex justify-center items-center font-bold font-serif mt-[20px] border-t-2 border-b-4'>
                         <h1>{selectedCar.name}</h1>
                     </div>
                     <div className='font-serif font-bold text-[1.5rem] rounded-[10px] p-[50px] h-[50%] w-full flex flex-wrap'>
                         <p className='w-[48%] mr-[5px]'>Mileage : <b>{selectedCar.mileage}</b></p>
-                        <p className='w-[50%]'>Price : {selectedCar.pricePerDay}$ </p>
+                        <p className='w-[50%]'>Price : ${selectedCar.pricePerDay} </p>
                         <p className='w-[50%]'>Class : {selectedCar.class} </p>
                         <p className='w-[50%]'>Gearbox: {selectedCar.gearbox}</p>
                         <p className='w-[50%]'>Max Passengers : {selectedCar.maxPassengers}</p>
@@ -190,7 +190,7 @@ function OrderForm(){
                         <p className='w-[50%]'>Year : {selectedCar.year}</p>
                     </div>
                     <div className='bg-gray-900 h-[50%] w-full flex justify-center items-center'>
-                        <img src={selectedCar.imageUrl} className="h-[90%] w-[420px] object-cover rounded-[10px]" ></img>
+                        <img src={selectedCar.imageUrl} className="h-[90%] w-[420px] object-fill rounded-[10px]" ></img>
                     </div>
                 </div>
 

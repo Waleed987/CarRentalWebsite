@@ -102,49 +102,47 @@ function Dashboard(){
             <div className="h-auto w-full bg-white mt-[0px] flex justify-center items-center">
                
                 <p className="text-[2rem] p-[90px]">
-                <span className="font-bold text-center">Convenient Car Rental in Albania: </span><br></br>
-                    We make it easy to rent a car in Albania. You can browse for the perfect vehicle and book
+                <span className="font-bold text-center">Convenient Car Rental in Pakistan: </span><br></br>
+                    We make it easy to rent a car in Pakistan. You can browse for the perfect vehicle and book
 
                     online.<br></br> Avoid the hassle of trying to arrange transportation after you arrive.
 
-                    Car rental in Albania is your best option for getting around Tirana and the surrounding area.
+                    Car rental in Pakistan is your best option for getting around Islamabad and the surrounding area.
 
                     You can jump in your car and travel to your next destination at any time rather than waiting
 
                     for a bus.
 
-                    You can pick up your car from the Tirana International Airport or arrange a pick-up location
+                    You can pick up your car from a pick-up location
 
                     that works better for your specific needs. We offer flexible rental options to accommodate
 
-                    your travel arrangements, including setting pickup spots in Tirana City and Durres Port.
+                    your travel arrangements.
 
                     <br></br>
                     <br></br>
 
-                    <span><b>How Does Renting a Car in Albania Work?</b></span><br></br>
-                    Car rental in Albania involves just a few steps:
+                    <span><b>How Does Renting a Car in Pakistan Work?</b></span><br></br>
+                    Car rental in Pakistan involves just a few steps:
                     <br></br>
                     <b>
                         
                     </b>
                     1-Pick a car<br></br>
                     2-Choose extras<br></br>
-                    3-Set pickup and drop-off locations<br></br>
-                    4-Set pickup and drop-off dates<br></br>
-                    5-Reserve your vehicle<br></br>
-                    6-You can pay online or at pickup. Simply find the vehicle you want and reserve it for the date
+                    3-Set pickup locations<br></br>
+                    4-Reserve your vehicle<br></br>
+                    5-You will recieve Confirmation from our Company on provided email, payment details will be mentioned in that email.
 
-                    of your visit. Whether you plan on staying for a day or longer, we have you covered.
                     <br></br>
                     <br></br>
                     
                     <b>
 
-                    Why Choose Us for Car Rentals in Albania?
+                    Why Choose Us for Car Rentals in Pakistan?
                     </b>
                     <br></br>
-                    Rent Point Albania is the leading source for Albania car rentals. We offer many benefits for
+                    Rent Point Pakistan is the leading source for Pakistan car rentals. We offer many benefits for
 
                     any of your rental needs:<br></br>
 
@@ -153,17 +151,17 @@ function Dashboard(){
                     3-Large Inventory<br></br>
                     4-Friendly staff<br></br>
                     5-Convenient options<br></br><br></br>
-                    We are based in Tirana, the capital of Albania and the country’s largest city. You can
+                    We are based in Islamabad, the capital of Pakistan and the country’s largest city. You can
 
-                    pick up your vehicle directly after landing at Tirana International Airport.
+                    pick up your vehicle directly after landing at Islamabad International Airport.
 
-                    You can also expect the best prices for car rentals in Albania. We offer competitive pricing
+                    You can also expect the best prices for car rentals in Pakistan. We offer competitive pricing
 
                     for all vehicles, from small cars to luxury sedans.
 
                     Our large inventory is full of well-maintained vehicles, including many cars with less than
 
-                    25,000 kilometers. You can rely on our cars to get you to any destination in Albania. Our
+                    25,000 kilometers. You can rely on our cars to get you to any destination in Pakistan. Our
 
                     vehicles offer a clean, safe ride for your next trip.<br></br><br></br>
 
@@ -179,10 +177,10 @@ function Dashboard(){
 
                     protection. You can also add another driver and arrange a pickup or drop-off location that
 
-                    works best for you, such as a spot in Tirana City or Durres Port.<br></br><br></br>
+                    works best for you, such as a spot in Islamabad City or Durres Port.<br></br><br></br>
 
 
-                    You should also consider the duration and distance of the trip. Albania covers a distance of
+                    You should also consider the duration and distance of the trip. Pakistan covers a distance of
 
                     about 210 miles (340 kilometers) from north to south and 95 miles (150 kilometers) from
 
