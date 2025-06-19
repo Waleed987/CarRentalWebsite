@@ -83,7 +83,7 @@ export default function CarSlider() {
               onLoad={() => setImagesLoaded((count) => count + 1)}
               onError={() => setImagesLoaded((count) => count + 1)}
             />
-            <a href="/"><h3 className="text-[2rem] font-bold">{car.name || car.title}</h3></a>
+            <a href="/orderform"><h3 className="text-[2rem] font-bold">{car.name || car.title}</h3></a>
             <p className="text-[1.3rem]">{car.class || car.description}</p>
             <p className="text-[1.5rem] font-bold">{car.pricePerDay} {car.currency} / day</p>
           </div>
