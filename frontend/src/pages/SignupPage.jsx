@@ -3,12 +3,14 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function LoginPage(){
+function SignupPage(){
     const navigate = useNavigate();
     const [form,setform] = useState({
         email:'',
-        password:''
+        password:'',
+        confirmPassword:''
     });
+    const [error, setError] = useState('');
 
     const handleChange = (e)=>{
         const {name,value} = e.target;
@@ -20,8 +22,23 @@ function LoginPage(){
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
+        
+        // Validate passwords match
+        if (form.password !== form.confirmPassword) {
+            setError('Passwords do not match');
+            return;
+        }
+
+        if (form.password.length < 6) {
+            setError('Password must be at least 6 characters long');
+            return;
+        }
+
         try {
-            const response = await axios.post('http://localhost:5000/api/user/login', form, {
+            const response = await axios.post('http://localhost:5000/api/user/signup', {
+                email: form.email,
+                password: form.password
+            }, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -30,19 +47,20 @@ function LoginPage(){
 
             if (response.data.token) {
                 localStorage.setItem('token', response.data.token);
-                console.log('Login successful, navigating to dashboard...');
+                console.log('Signup successful, navigating to dashboard...');
                 navigate('/dashboard');
             } else {
-                alert('Login failed: ' + response.data.msg);
+                setError('Signup failed: ' + response.data.msg);
             }
             
             setform({
                 email: '',
-                password: ''
+                password: '',
+                confirmPassword: ''
             });
         } catch (error) {
-            console.error('Login error:', error);
-            alert(error.response?.data?.msg || 'An error occurred during login');
+            console.error('Signup error:', error);
+            setError(error.response?.data?.msg || 'An error occurred during signup');
         }
     };
 
@@ -67,10 +85,17 @@ function LoginPage(){
                         {/* Header */}
                         <div className="text-center mb-8">
                             <h1 className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                Welcome Back
+                                Create Account
                             </h1>
-                            <p className="text-white/80 text-lg">Sign in to your account</p>
+                            <p className="text-white/80 text-lg">Join our car rental community</p>
                         </div>
+
+                        {/* Error message */}
+                        {error && (
+                            <div className="mb-4 p-3 bg-red-500/20 border border-red-400/30 rounded-lg text-red-200 text-sm">
+                                {error}
+                            </div>
+                        )}
 
                         {/* Form */}
                         <form onSubmit={handleSubmit} className="space-y-6"> 
@@ -121,6 +146,30 @@ function LoginPage(){
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Confirm Password field */}
+                            <div className="space-y-2">
+                                <label htmlFor="confirmPassword" className="block text-white font-semibold text-lg">
+                                    Confirm Password
+                                </label>
+                                <div className="relative">
+                                    <input 
+                                        value={form.confirmPassword} 
+                                        onChange={handleChange} 
+                                        className="w-full px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300 hover:bg-white/25" 
+                                        type="password" 
+                                        name="confirmPassword" 
+                                        id="confirmPassword" 
+                                        placeholder="Confirm your password"
+                                        required
+                                    />
+                                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <svg className="h-5 w-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
                             
                             {/* Submit button */}
                             <button 
@@ -128,22 +177,19 @@ function LoginPage(){
                                 className="w-full py-3 px-6 bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 hover:from-purple-600 hover:via-purple-700 hover:to-pink-600 text-white font-bold text-lg rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-300/50 active:scale-95"
                             >
                                 <span className="flex items-center justify-center">
-                                    Sign In
+                                    Create Account
                                     <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                                     </svg>
                                 </span>
                             </button>
 
                             {/* Additional links */}
                             <div className="text-center space-y-2 mt-6">
-                                <a href="#" className="text-white/80 hover:text-purple-300 text-sm transition-colors duration-300">
-                                    Forgot your password?
-                                </a>
                                 <p className="text-white/60 text-sm">
-                                    Don't have an account? 
-                                    <a onClick={() => navigate('/signup')} className="text-purple-300 hover:text-purple-200 ml-1 font-semibold transition-colors duration-300 cursor-pointer">
-                                        Sign up
+                                    Already have an account? 
+                                    <a onClick={() => navigate('/login')} className="text-purple-300 hover:text-purple-200 ml-1 font-semibold transition-colors duration-300 cursor-pointer">
+                                        Sign in
                                     </a>
                                 </p>
                             </div>
@@ -160,4 +206,4 @@ function LoginPage(){
     );
 }
 
-export default LoginPage;
+export default SignupPage; 
